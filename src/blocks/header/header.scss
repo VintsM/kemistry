@@ -1,0 +1,222 @@
+.header {
+  color: $white;
+  &.active {
+    .header {
+      &__wrapper {
+        background-color: $java;
+        box-shadow: 0 1px 11px 0 rgba(0, 0, 0, .3);
+        @include breakpoint(large) {
+          padding: 10px;
+        }
+      }
+      &__logo {
+        @include breakpoint(large) {
+          transform: scale(.7);
+        }
+      }
+    }
+  }
+  &__push {
+    height: svw(70);
+  }
+  &__wrapper {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    transition: $transition;
+    padding: svw(5) 0 svw(12);
+    @include breakpoint(medium) {
+      padding: mvw(15) 0;
+    }
+    @include breakpoint(large) {
+      padding: rem(20) 0;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(medium) {
+      padding: 0 mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      padding: 0 rem($large-container-padding);
+      max-width: $global-width;
+      margin: 0 auto;
+    }
+  }
+  &__logo {
+    width: svw(100);
+    transition: $transition;
+    @include breakpoint(large) {
+      width: rem(185);
+      height: rem(83);
+    }
+  }
+  &__logo-img {
+    max-width: 100%;
+  }
+  &__nav {
+    display: none;
+    color: $white;
+    @include breakpoint(medium) {
+      padding: 0 mvw(20);
+    }
+    @include breakpoint(large) {
+      display: flex;
+      align-items: center;
+      margin-top: rem(20);
+    }
+  }
+  &__nav-item {
+    display: inline-block;
+    font-size: rem(20);
+    line-height: 1.1;
+    padding: rem(5);
+    color: $white;
+    text-decoration: none;
+    &:not(:last-child) {
+      margin-right: rem(45);
+    }
+    &.active,
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  &__lang {
+    text-transform: uppercase;
+    margin-top: svw(15);
+    padding: svw($small-container-padding);
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+      padding: 0;
+    }
+    @include breakpoint(large) {
+      margin-top: rem(20);
+    }
+  }
+  &__lang-text {
+    opacity: .7;
+  }
+  &__lang-link {
+    color: $white;
+    text-decoration: underline;
+  }
+  &__burger {
+    box-sizing: border-box;
+    height: svw(38);
+    padding: svw($small-container-padding);
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-top: svw(15);
+    width: svw(94);
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+      height: mvw(38);
+      padding: 0 mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      display: none;
+    }
+    &.active {
+      .header__mobile-close {
+        display: block;
+      }
+    }
+  }
+  &__burger-body {
+    span {
+      display: block;
+      width: svw(25);
+      height: svw(2);
+      background-color: $white;
+      border-radius: svw(2);
+      position: relative;
+      transition: background-color .5s ease;
+      will-change: background-color;
+      &:not(:last-child) {
+        margin-bottom: svw(5);
+        @include breakpoint(medium) {
+          margin-bottom: mvw(5);
+        }
+      }
+      @include breakpoint(medium) {
+        width: mvw(25);
+        height: mvw(2);
+        border-radius: mvw(2);
+      }
+    }
+  }
+  &__mobile-nav {
+    display: none;
+    background: rgba($mine-shaft, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+  }
+  &__mobile-inner {
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__mobile-close {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: svw(45);
+    height: svw(38);
+    z-index: 40;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: svw(27);
+      height: svw(2);
+      background-color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &__mobile-list {
+    margin: svw(120) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__mobile-el {
+    display: block;
+    width: 100%;
+    margin-bottom: svw(30);
+    text-align: center;
+  }
+  &__mobile-link {
+    font-size: svw(22);
+    line-height: 1.09;
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+include ../../blocks/icon/icon
+include ../../blocks/header/header
+
+doctype html
+html(lang='ru')
+  head
+    title Kemistry
+    meta(http-equiv='X-UA-Compatible', content='text/html', charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    link(href='./css/styles.css' rel='stylesheet')
+    link(href='./favicon.ico' rel='shortcut icon')
+    link(href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800&amp;subset=cyrillic' rel='stylesheet')
+  body
+    .l-page
+      .l-page__inner
+        +header(headerType)
+        .l-page__content
+          block content
+      footer.footer
+
+    block addContent
+
+    script(src='./scripts/app.js')
+
+    block scripts

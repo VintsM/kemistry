@@ -1,0 +1,18 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($val) {
+  $val: strip-unit($val) / 16 * 1rem;
+  @return $val;
+}
+
+@function svw($val) {
+  $val: 100vw * strip-unit($val) / 320;
+  @return $val;
+}
+
+@function mvw($val) {
+  $val: 100vw * strip-unit($val) / 768;
+  @return $val;
+}

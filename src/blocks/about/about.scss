@@ -1,0 +1,28 @@
+.about {
+  &__inner {
+    @include breakpoint(medium) {
+
+    }
+  }
+  &__title {
+    font-family: $alt-font;
+    font-size: svw(34);
+    line-height: 1;
+    @include breakpoint(medium) {
+      font-size: mvw(54);
+    }
+    @include breakpoint(large) {
+      font-size: rem(54);
+    }
+  }
+  &__text {
+    font-size: svw(20);
+    line-height: 1.2;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(20);
+    }
+  }
+}

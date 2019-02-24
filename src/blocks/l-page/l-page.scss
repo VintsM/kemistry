@@ -1,0 +1,15 @@
+.l-page {
+  background-image: linear-gradient(315deg, $blue-chill, $bright-turquoise);
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
+  &__content {
+    @include breakpoint(medium) {
+
+    }
+    @include breakpoint(medium) {
+
+    }
+  }
+}

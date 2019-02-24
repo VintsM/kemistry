@@ -1,0 +1,104 @@
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: svw(15) svw(20);
+  border-width: svw(3);
+  border-style: solid;
+  border-color: $white;
+  border-radius: svw(25);
+  text-decoration: none;
+  text-align: center;
+  font-family: $main-font;
+  font-size: svw(16);
+  line-height: 1;
+  min-width: svw(195);
+  color: $white;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+  transition: $transition;
+  @include breakpoint(medium) {
+    width: auto;
+    min-width: mvw(250);
+    border-width: mvw(3);
+    font-size: mvw(24);
+    padding: mvw(15) mvw(20);
+  }
+  @include breakpoint(large) {
+    min-width: rem(305);
+    border-width: rem(3);
+    font-size: rem(24);
+    padding: rem(15) rem(20);
+  }
+  &.button_green {
+    border-color: $primary;
+    color: $primary;
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      color: $white;
+      background-color: $primary;
+    }
+  }
+  &.button_blot {
+    color: $white;
+    background: url(../img/button/bg-red.png) transparent center no-repeat;
+    background-size: contain;
+    line-height: svw(60);
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    &:hover,
+    &:focus {
+      background: url(../img/button/bg-green.png) transparent center no-repeat;
+      background-size: contain;
+      color: $white;
+    }
+    &.button_green {
+      background: url(../img/button/bg-green.png) transparent center no-repeat;
+      background-size: contain;
+      &:hover,
+      &:focus {
+        background: url(../img/button/bg-red.png) transparent center no-repeat;
+        background-size: contain;
+        color: $white;
+      }
+    }
+    @include breakpoint(medium) {
+      display: inline-block;
+      padding: 0;
+      width: mvw(392);
+      height: mvw(85);
+      font-size: mvw(26);
+      line-height: mvw(85);
+    }
+    @include breakpoint(large) {
+      padding: 0;
+      width: rem(392);
+      height: rem(85);
+      font-size: rem(26);
+      line-height: rem(85);
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $mine-shaft;
+    text-decoration: none;
+  }
+  &__icon + &__text {
+    margin-left: svw(20);
+    @include breakpoint(medium) {
+      margin-left: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-left: rem(20);
+    }
+  }
+  &__icon {
+    fill: $white;
+  }
+}

@@ -1,0 +1,35 @@
+mixin header(type)
+  -
+    let menu = [
+    {text: 'Об агентстве', link: '#about'},
+    {text: 'Клиенты', link: '#client'},
+    {text: 'Проекты', link: '#projects'},
+    {text: 'Контакты', link: '#contacts'}
+    ];
+  header.header.js-header(class=type)
+    .header__wrapper
+      .header__inner
+        .header__burger
+          .header__burger-body
+            span
+            span
+            span
+          .header__mobile-close
+        a(href='/').header__logo
+          img(src='./img/logo.png' alt='Kemistry logo').header__logo-img
+        nav.header__nav
+          each item in menu
+            a(href=item.link).header__nav-item= item.text
+        .header__lang
+          span.header__lang-text Рус
+          =' '
+          | /
+          =' '
+          a(href='/en').header__lang-link Eng
+      nav.header__mobile-nav
+        .header__mobile-inner
+          ul.header__mobile-list
+            each item in menu
+              li.header__mobile-el
+                a(href=item.link).header__mobile-link= item.text
+    .header__push

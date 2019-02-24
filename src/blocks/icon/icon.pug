@@ -1,0 +1,11 @@
+//-
+  +icon({
+    name: 'Название иконки',
+    mods: 'Модификаторы'
+  })
+
+mixin icon(data)
+  - mods = data.mods || ''
+  - className = ('icon icon-' + data.name + ' ' + mods).trim()
+  svg(class=className)
+    use(xlink:href='./img/icons.svg#icon-' + data.name)

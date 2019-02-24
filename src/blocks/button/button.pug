@@ -1,0 +1,20 @@
+//-
+  +button({
+    tag: 'a', // или 'button'
+    mods: 'top__button',
+    text: 'Зарегистрировать код',
+    attrs: {
+      href: '#',
+      type: 'submit'
+    }
+  })
+
+mixin button(data)
+  #{data.tag}.button(class=data.mods)&attributes(data.attrs)
+    if (data.iconLeft != undefined)
+      span.button__icon
+        +icon(data.iconLeft)
+    span.button__text= data.text
+    if (data.icon != undefined)
+      span.button__icon
+        +icon(data.icon)
