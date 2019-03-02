@@ -9,6 +9,10 @@ $bright-turquoise: #00ffb7;
 $pastel-green: rgb(98, 231, 153);
 $turquoise: rgb(51, 197, 189);
 
+$blue: #0000ff;
+$lavender-rose: #feabef;
+$primary: $blue;
+
 // Fonts
 $main-font: 'Open Sans', Arial, Helvetica, sans-serif;
 $alt-font: 'Merriweather', Times New Roman, serif;
@@ -20,7 +24,7 @@ $large: 1024px;
 
 // Other
 $transition: .3s ease;
-$small-container-padding: 10px;
-$medium-container-padding: 15px;
-$large-container-padding: 20px;
+$small-container-padding: 20px;
+$medium-container-padding: 30px;
+$large-container-padding: 50px;
 $global-width: 1280px;

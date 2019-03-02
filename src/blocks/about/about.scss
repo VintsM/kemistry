@@ -1,8 +1,18 @@
 .about {
+  padding-top: svw(40);
+  @include breakpoint(medium) {
+    padding-top: mvw(40);
+  }
+  @include breakpoint(large) {
+    padding-top: rem(50);
+  }
   &__inner {
     @include breakpoint(medium) {
 
     }
+  }
+  &__item {
+    margin-bottom: svw(30);
   }
   &__title {
     font-family: $alt-font;

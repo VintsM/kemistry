@@ -1,3 +1,5 @@
+include ../burger/burger
+
 mixin header(type)
   -
     let menu = [
@@ -10,13 +12,9 @@ mixin header(type)
     .header__wrapper
       .header__inner
         .header__burger
-          .header__burger-body
-            span
-            span
-            span
-          .header__mobile-close
+          +burger()
         a(href='/').header__logo
-          img(src='./img/logo.png' alt='Kemistry logo').header__logo-img
+          img(src='./img/logos/kemistry_blue.svg' alt='Kemistry logo').header__logo-img
         nav.header__nav
           each item in menu
             a(href=item.link).header__nav-item= item.text

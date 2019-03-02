@@ -1,0 +1,87 @@
+.burger {
+  box-sizing: border-box;
+  width: svw(32);
+  padding: svw(5);
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  @include breakpoint(medium) {
+    width: mvw(32);
+    height: mvw(38);
+    padding: mvw(5);
+  }
+  @include breakpoint(large) {
+    width: rem(32);
+    height: rem(38);
+    padding: rem(5);
+  }
+  &.active {
+    .burger__mobile-close {
+      display: block;
+    }
+  }
+  &__body {
+    width: svw(22);
+    height: svw(19);
+    @include breakpoint(medium) {
+      width: mvw(22);
+      height: mvw(19);
+    }
+    @include breakpoint(large) {
+      width: rem(22);
+      height: rem(19);
+    }
+    span {
+      display: block;
+      width: 100%;
+      height: svw(3);
+      background-color: $primary;
+      position: relative;
+      transition: background-color .5s ease;
+      will-change: background-color;
+      @include breakpoint(medium) {
+        height: mvw(3);
+      }
+      @include breakpoint(large) {
+        height: rem(3);
+      }
+      &:not(:last-child) {
+        margin-bottom: svw(5);
+        @include breakpoint(medium) {
+          margin-bottom: mvw(5);
+        }
+        @include breakpoint(large) {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+  }
+  &__mobile-close {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: svw(45);
+    height: svw(38);
+    z-index: 40;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: svw(27);
+      height: svw(2);
+      background-color: $primary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
