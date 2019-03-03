@@ -17,6 +17,7 @@
   &__item {
     font-size: svw(20);
     margin-bottom: svw(5);
+    font-weight: 300;
     @include breakpoint(medium) {
       font-size: mvw(20);
       margin-bottom: mvw(5);

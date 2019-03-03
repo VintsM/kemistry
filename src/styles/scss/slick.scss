@@ -38,6 +38,7 @@
         padding: svw(3);
         border: none;
         border-radius: 50%;
+        cursor: pointer;
         @include breakpoint(medium) {
           width: mvw(10);
           height: mvw(10);

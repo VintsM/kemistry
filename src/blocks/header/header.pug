@@ -1,30 +1,32 @@
 include ../burger/burger
 
-mixin header(type)
+mixin header(data)
   -
     let menu = [
     {text: 'Об агентстве', link: '#about'},
-    {text: 'Клиенты', link: '#client'},
+    {text: 'Клиенты', link: '#clients'},
+    {text: 'Услуги', link: '#services'},
     {text: 'Проекты', link: '#projects'},
     {text: 'Контакты', link: '#contacts'}
     ];
-  header.header.js-header(class=type)
+  header.header.js-header(class=data.mods)
     .header__wrapper
       .header__inner
         .header__burger
           +burger()
         a(href='/').header__logo
           img(src='./img/logos/kemistry_blue.svg' alt='Kemistry logo').header__logo-img
-        nav.header__nav
-          each item in menu
-            a(href=item.link).header__nav-item= item.text
+        .container.header__nav-wrapper
+          nav.header__nav
+            each item in menu
+              a(href=item.link title=item.text).header__nav-item.js-header-nav-item= item.text
         .header__lang
           span.header__lang-text Рус
           =' '
           | /
           =' '
           a(href='/en').header__lang-link Eng
-      nav.header__mobile-nav
+      nav.header__mobile-nav.js-header-mobile-nav
         .header__mobile-inner
           ul.header__mobile-list
             each item in menu

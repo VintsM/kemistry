@@ -1,0 +1,16 @@
+.up {
+  display: none;
+  @include breakpoint(medium) {
+    display: block;
+    width: mvw(30);
+    height: mvw(30);
+  }
+  @include breakpoint(large) {
+    width: rem(30);
+    height: rem(30);
+  }
+  &__img {
+    display: block;
+    max-width: 100%;
+  }
+}

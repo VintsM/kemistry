@@ -10804,12 +10804,12 @@ return jQuery;
 define('common',['jquery'], function( $ ) {
   $.fn.pageStatus = function() {
     var page = {
-      pageState: '',// small (< 768) || medium (>= 768,  < 1280) || large (>= 1280)
+      pageState: '',// small (< 768) || medium (>= 768,  < 1024) || large (>= 1024)
       changeState: function(init) {
         var oldPageState = this.pageState;
-        if (window.innerWidth < 768) this.pageState = 'small';
-        else if (window.innerWidth >= 768 && window.innerWidth < 1280) this.pageState = 'medium';
-        else if (window.innerWidth >= 1280) this.pageState = 'large';
+        if (window.innerWidth < 768) this.pageState = 'sm';
+        else if (window.innerWidth >= 768 && window.innerWidth < 1024) this.pageState = 'md';
+        else if (window.innerWidth >= 1024) this.pageState = 'lg';
         window.STATE = this.pageState;
         if (init)
           return  $(document).trigger('changeState', [this.pageState, oldPageState]);
@@ -10824,39 +10824,37 @@ define('common',['jquery'], function( $ ) {
     page.changeState(true);
   };
 
-  $(document).ready(function () {
-    $('body').pageStatus();
+  $('body').pageStatus();
 
-    $('a[href*="#"]').on('click', function (event) {
-      var anchor = this.getAttribute('href').split('#').pop();
-      if (anchor.length) {
-        var target = $('#' + anchor);
-        event.preventDefault();
-        var targetOffsetTop = target.offset().top - $('.header').outerHeight();
-        $('html, body').animate({
-          scrollTop: targetOffsetTop
-        }, 800);
-      }
-    });
+  $('a[href*="#"]').on('click', function (event) {
+    var anchor = this.getAttribute('href').split('#').pop();
+    if (anchor.length) {
+      var target = $('#' + anchor);
+      event.preventDefault();
+      var targetOffsetTop = target.offset().top - $('.js-header').outerHeight();
+      $('html, body').animate({
+        scrollTop: targetOffsetTop
+      }, 800);
+    }
   });
 });
 define('utils',['jquery'], function($) {
     return {
         vars: {
-        //     classActive: '_active',
+            classActive: '_active',
         //     classDisabled: '_disabled',
         //     classError: '_error',
         //     classHidden: '_hidden',
-        //     classVisible: '_visible',
+            classVisible: '_visible',
         //     conf: {
         //         xlBreakpoint: 1280,
         //         lgBreakpoint: 1024,
         //         mobileBreakpoint: 768
         //     },
             state: {
-                small: 'small',
-                md: 'medium',
-                lg: 'large'
+                sm: 'sm',
+                md: 'md',
+                lg: 'lg'
             }
         },
         // isActive: function(element) {
@@ -10884,12 +10882,12 @@ define('utils',['jquery'], function($) {
             var viewportBottom = viewportTop + $(window).height();
             return elementTop - viewportBottom <= gap;
         },
-        // isTopOnViewportMiddle: function(element) {
-        //     var elementTop = element.offset().top;
-        //     var viewportTop = $(window).scrollTop();
-        //     var viewportMiddle = viewportTop + $(window).height()/2;
-        //     return elementTop - viewportMiddle <= 100;
-        // },
+        isTopOnViewportMiddle: function(element) {
+            var elementTop = element.offset().top;
+            var viewportTop = $(window).scrollTop();
+            var viewportMiddle = viewportTop + $(window).height()/2;
+            return elementTop - viewportMiddle <= 100;
+        },
         // windowSize: function() {
         //     var width = $(window).width();
         //     if (width < this.vars.conf.mobileBreakpoint) {
@@ -10914,8 +10912,7 @@ define('utils',['jquery'], function($) {
 });
 
 define('parallax',['jquery', 'utils'], function ($, utils) {
-    var $scrollParallaxLayer = $('[data-parallax-speed]'),
-        $mouseParallaxLayer = $('[data-mouse-parallax-x]');
+    var $scrollParallaxLayer = $('[data-parallax-speed]');
 
     function parallaxScrolling() {
         var $scroll = $(window).scrollTop();
@@ -10933,66 +10930,56 @@ define('parallax',['jquery', 'utils'], function ($, utils) {
         });
     }
 
-    function mouseParallax(e) {
-        var xpos = e.clientX;
-        var ypos = e.clientY;
-        xpos = xpos * 2;
-        ypos = ypos * 2;
-        $mouseParallaxLayer.each(function () {
-            var shiftX = $(this).data('mouse-parallax-x'),
-                shiftY = $(this).data('mouse-parallax-y');
-            $(this).css({
-                transform: 'translate(' + (0 + (xpos / shiftX)) + 'px, ' + (0 + (ypos / shiftY)) + 'px)'
-            });
-        });
-    }
-
     $(window).on('scroll', function() {
-        if (window.STATE == utils.vars.state.md || window.STATE == utils.vars.state.lg) {
+        if (window.STATE == utils.vars.state.lg) {
             parallaxScrolling();
         } else {
             $scrollParallaxLayer.attr('style', '');
         }
     });
-
-    $(window).mousemove(function(e) {
-        if (window.STATE == utils.vars.state.md || window.STATE == utils.vars.state.lg) {
-            mouseParallax(e);
-        } else {
-            $mouseParallaxLayer.attr('style', '');
-        }
-    });
 });
 
-(function ($) {
-  $(document).ready(function () {
+define('header',['jquery', 'utils'], function ($, utils) {
+
     function headerActivityCheck () {
       if ($(window).scrollTop() > 0) {
-        $('.js-header').addClass('active');
+        $('.js-header').addClass(utils.vars.classActive);
       } else {
-        $('.js-header').removeClass('active');
+        $('.js-header').removeClass(utils.vars.classActive);
       }
+    }
+
+    function headerNavActivityCheck () {
+      $('.js-header-nav-item').each(function (index, el) {
+        let target = $($(el).attr('href'));
+        if (window.scrollY > (target.offset().top - 150)) {
+          $(el).addClass(utils.vars.classActive).siblings().removeClass(utils.vars.classActive);
+        }
+      });
     }
 
     $(window).on('scroll', function() {
       headerActivityCheck();
+      headerNavActivityCheck();
     });
 
     headerActivityCheck();
-
-    $('.header__mobile-link').on('click', function () {
-      $('.header__burger').removeClass('active');
-      $('.header__mobile-nav').hide();
-    });
-
-    $('.header__burger').on('click', function () {
-      $(this).toggleClass('active');
-      $('.header__mobile-nav').toggle();
-    });
+    headerNavActivityCheck();
+});
+define('burger',['jquery', 'utils'], function ($, utils) {
+  $('.header__mobile-link').on('click', function () {
+    $('.js-burger').removeClass(utils.vars.classActive);
+    $('.js-header-mobile-nav').hide();
   });
-})(jQuery);
-define("header", function(){});
 
+  $('.js-burger').on('click', function () {
+    $(this).toggleClass(utils.vars.classActive);
+    $('.js-header-mobile-nav').toggle();
+  });
+});
+define('about',['jquery', 'utils'], function ($, utils) {
+  $('.js-about-visible').addClass(utils.vars.classVisible);
+});
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -14013,13 +14000,12 @@ define('projects',['slick'], function( slick ) {
         centerMode: true
     })
 });
-define('src/scripts/app.js',['require','common','parallax','header','projects'],function(require){
-    // import './jquery-global';
-// import './common';
-// import '../blocks/header/header';
+define('src/scripts/app.js',['require','common','parallax','header','burger','about','projects'],function(require) {
     require('common');
     require('parallax');
     require('header');
+    require('burger');
+    require('about');
     require('projects');
 });
 

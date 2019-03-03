@@ -6,6 +6,8 @@ requirejs.config({
         utils: './src/scripts/utils',
         parallax: './src/scripts/parallax',
         header: './src/blocks/header/header',
-        projects: './src/blocks/projects/projects',
+        burger: './src/blocks/burger/burger',
+        about: './src/blocks/about/about',
+        projects: './src/blocks/projects/projects'
     }
 });

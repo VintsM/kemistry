@@ -16,7 +16,7 @@
     height: rem(38);
     padding: rem(5);
   }
-  &.active {
+  &.#{$active} {
     .burger__mobile-close {
       display: block;
     }
@@ -59,12 +59,12 @@
   }
   &__mobile-close {
     display: none;
-    padding: 10px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: svw(45);
-    height: svw(38);
+    top: svw(-5);
+    left: svw(-5);
+    width: svw(32);
+    height: svw(29);
+    padding: svw(5);
     z-index: 40;
     &:before,
     &:after {
@@ -72,7 +72,7 @@
       display: block;
       width: svw(27);
       height: svw(2);
-      background-color: $primary;
+      background-color: $white;
       position: absolute;
       top: 50%;
       left: 50%;

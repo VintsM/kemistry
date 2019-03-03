@@ -1,9 +1,4 @@
 @mixin breakpoint ($value) {
-  @if ($value == 'small') {
-    @media screen and (min-width: $small) {
-      @content
-    }
-  }
   @if ($value == 'medium') {
     @media screen and (min-width: $medium) {
       @content

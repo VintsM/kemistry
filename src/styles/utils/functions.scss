@@ -16,3 +16,8 @@
   $val: 100vw * strip-unit($val) / 768;
   @return $val;
 }
+
+@function lvw($val) {
+  $val: 100vw * strip-unit($val) / 1024;
+  @return $val;
+}

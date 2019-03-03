@@ -1,20 +1,20 @@
 define(['jquery'], function($) {
     return {
         vars: {
-        //     classActive: '_active',
+            classActive: '_active',
         //     classDisabled: '_disabled',
         //     classError: '_error',
         //     classHidden: '_hidden',
-        //     classVisible: '_visible',
+            classVisible: '_visible',
         //     conf: {
         //         xlBreakpoint: 1280,
         //         lgBreakpoint: 1024,
         //         mobileBreakpoint: 768
         //     },
             state: {
-                small: 'small',
-                md: 'medium',
-                lg: 'large'
+                sm: 'sm',
+                md: 'md',
+                lg: 'lg'
             }
         },
         // isActive: function(element) {
@@ -42,12 +42,12 @@ define(['jquery'], function($) {
             var viewportBottom = viewportTop + $(window).height();
             return elementTop - viewportBottom <= gap;
         },
-        // isTopOnViewportMiddle: function(element) {
-        //     var elementTop = element.offset().top;
-        //     var viewportTop = $(window).scrollTop();
-        //     var viewportMiddle = viewportTop + $(window).height()/2;
-        //     return elementTop - viewportMiddle <= 100;
-        // },
+        isTopOnViewportMiddle: function(element) {
+            var elementTop = element.offset().top;
+            var viewportTop = $(window).scrollTop();
+            var viewportMiddle = viewportTop + $(window).height()/2;
+            return elementTop - viewportMiddle <= 100;
+        },
         // windowSize: function() {
         //     var width = $(window).width();
         //     if (width < this.vars.conf.mobileBreakpoint) {

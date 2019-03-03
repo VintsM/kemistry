@@ -2,26 +2,6 @@
   background-image: linear-gradient(315deg, rgba(238, 127, 238, 0.42), rgba(247, 149, 164, 0.6), rgba(255, 204, 141, 0.53), rgba(247, 149, 164, 0.58), rgba(240, 131, 226, 0.44), rgba(238, 127, 238, 0.29));
   background-color: $white;
   position: relative;
-  &__content {
-
-  }
-  //&__inner {
-  //  display: grid;
-  //  grid-template-columns: 100px 1fr;
-  //  grid-column-gap: rem(70);
-  //}
-  //&__menu {
-  //  max-width: rem(100);
-  //  font-size: rem(10);
-  //}
-  //&__menu-item {
-  //  display: block;
-  //  margin-bottom: rem(7);
-  //  text-decoration: none;
-  //  &:hover {
-  //    color: $white;
-  //  }
-  //}
   &__img {
     position: absolute;
     display: none;
@@ -36,24 +16,18 @@
       }
     }
     &_1 {
-      //top: mvw(200);
-      //right: mvw(50);
       @include breakpoint(large) {
         top: rem(200);
         right: rem(120);
       }
     }
     &_2 {
-      //top: svw(400);
-      //right: svw(80);
       @include breakpoint(large) {
         top: rem(1800);
         right: rem(50);
       }
     }
     &_3 {
-      //top: svw(600);
-      //right: svw(10);
       @include breakpoint(large) {
         top: rem(2400);
         right: rem(80);
@@ -73,16 +47,24 @@
       width: rem(300);
       height: rem(300);
       &_1 {
-        top: rem(500);
-        left: rem(20);
+        top: rem(200);
+        right: rem(20);
       }
       &_2 {
-        top: rem(1800);
-        right: rem(30);
+        top: rem(700);
+        left: rem(20);
       }
       &_3 {
-        top: rem(2500);
+        top: rem(1040);
+        right: rem(300);
+      }
+      &_4 {
+        top: rem(1540);
         left: rem(50);
+      }
+      &_5 {
+        top: rem(1840);
+        right: rem(320);
       }
     }
     &_medium {
@@ -90,32 +72,49 @@
       width: rem(200);
       height: rem(200);
       &_1 {
-        top: rem(400);
-        left: rem(70);
+        top: rem(500);
+        right: rem(260);
       }
       &_2 {
-        top: rem(1600);
-        right: rem(60);
+        top: rem(600);
+        left: rem(200);
       }
       &_3 {
-        top: rem(2300);
-        left: rem(30);
+        top: rem(970);
+        right: rem(160);
+      }
+      &_4 {
+        top: rem(1570);
+        left: rem(300);
+      }
+      &_5 {
+        top: rem(2050);
+        right: rem(270);
       }
     }
     &_front {
+      filter: blur(1px);
       width: rem(100);
       height: rem(100);
       &_1 {
-        top: rem(700);
-        left: rem(50);
+        top: rem(400);
+        right: rem(250);
       }
       &_2 {
-        top: rem(1700);
-        right: rem(50);
+        top: rem(1000);
+        left: rem(250);
       }
       &_3 {
-        top: rem(2200);
-        left: rem(70);
+        top: rem(1360);
+        right: rem(100);
+      }
+      &_4 {
+        top: rem(2060);
+        left: rem(370);
+      }
+      &_5 {
+        top: rem(2550);
+        right: rem(150);
       }
     }
   }

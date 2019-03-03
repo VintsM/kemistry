@@ -1,6 +1,5 @@
 define(['jquery', 'utils'], function ($, utils) {
-    var $scrollParallaxLayer = $('[data-parallax-speed]'),
-        $mouseParallaxLayer = $('[data-mouse-parallax-x]');
+    var $scrollParallaxLayer = $('[data-parallax-speed]');
 
     function parallaxScrolling() {
         var $scroll = $(window).scrollTop();
@@ -18,33 +17,11 @@ define(['jquery', 'utils'], function ($, utils) {
         });
     }
 
-    function mouseParallax(e) {
-        var xpos = e.clientX;
-        var ypos = e.clientY;
-        xpos = xpos * 2;
-        ypos = ypos * 2;
-        $mouseParallaxLayer.each(function () {
-            var shiftX = $(this).data('mouse-parallax-x'),
-                shiftY = $(this).data('mouse-parallax-y');
-            $(this).css({
-                transform: 'translate(' + (0 + (xpos / shiftX)) + 'px, ' + (0 + (ypos / shiftY)) + 'px)'
-            });
-        });
-    }
-
     $(window).on('scroll', function() {
-        if (window.STATE == utils.vars.state.md || window.STATE == utils.vars.state.lg) {
+        if (window.STATE == utils.vars.state.lg) {
             parallaxScrolling();
         } else {
             $scrollParallaxLayer.attr('style', '');
-        }
-    });
-
-    $(window).mousemove(function(e) {
-        if (window.STATE == utils.vars.state.md || window.STATE == utils.vars.state.lg) {
-            mouseParallax(e);
-        } else {
-            $mouseParallaxLayer.attr('style', '');
         }
     });
 });

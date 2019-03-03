@@ -14,11 +14,10 @@ $lavender-rose: #feabef;
 $primary: $blue;
 
 // Fonts
-$main-font: 'HelveticaNeueCyr', Arial, Helvetica, sans-serif;
+$main-font: 'HelveticaNeue', Arial, Helvetica, sans-serif;
 $alt-font: 'SoyuzGroteskBold', Comic Sans, sans-serif;
 
 // Breakpoints
-$small: 640px;
 $medium: 768px;
 $large: 1024px;
 
@@ -26,5 +25,9 @@ $large: 1024px;
 $transition: .3s ease;
 $small-container-padding: 20px;
 $medium-container-padding: 30px;
-$large-container-padding: 50px;
-$global-width: 1280px;
+$large-container-padding: 30px;
+$global-width: 1100px;
+
+// Classes
+$active: '_active';
+$visible: '_visible';

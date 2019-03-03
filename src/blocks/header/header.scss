@@ -2,40 +2,33 @@
   color: $primary;
   font-weight: 400;
 
-  &.active {
+  &.#{$active} {
     .header {
       &__wrapper {
         background-color: $lavender-rose;
         box-shadow: 0 1px 11px 0 rgba($primary, .3);
         @include breakpoint(large) {
-          padding: rem(10) 0;
+          padding: rem(10) 0 rem(15);
         }
       }
 
       &__logo {
         @include breakpoint(large) {
           width: rem(130);
-          margin-right: rem(115);
-        }
-      }
-
-      &__nav {
-        @include breakpoint(large) {
-          margin-top: rem(20);
+          margin-right: rem(50);
         }
       }
 
       &__nav-item {
         @include breakpoint(large) {
           font-size: rem(16);
-          //padding: rem(5);
         }
       }
 
       &__lang {
         @include breakpoint(large) {
-          margin-top: rem(20);
           font-size: rem(14);
+          top: rem(5);
         }
       }
     }
@@ -44,10 +37,10 @@
   &__push {
     height: svw(62);
     @include breakpoint(medium) {
-      height: mvw(88);
+      height: mvw(91);
     }
     @include breakpoint(large) {
-      height: rem(123);
+      height: rem(94);
     }
   }
 
@@ -73,12 +66,11 @@
     justify-content: space-between;
     align-items: center;
     @include breakpoint(medium) {
-      justify-content: flex-start;
-      padding: 0 mvw($medium-container-padding);
+      display: block;
+      position: relative;
     }
     @include breakpoint(large) {
-      padding: 0 rem($large-container-padding);
-      max-width: $global-width;
+      max-width: rem($global-width);
       margin: 0 auto;
     }
   }
@@ -87,13 +79,15 @@
     width: svw(100);
     transition: $transition;
     @include breakpoint(medium) {
-      width: mvw(130);
-      margin-right: mvw(60);
+      width: mvw(95);
+      position: absolute;
+      top: mvw(-15);
+      left: mvw($medium-container-padding);
     }
     @include breakpoint(large) {
-      width: rem(185);
-      //height: rem(83);
-      margin-right: rem(60);
+      width: rem(145);
+      top: rem(-25);
+      left: rem($large-container-padding);
     }
   }
 
@@ -102,19 +96,24 @@
     max-width: 100%;
   }
 
-  &__nav {
+  &__nav-wrapper {
     display: none;
+    @include breakpoint(medium) {
+      display: block;
+    }
+  }
+
+  &__nav {
     transition: $transition;
     @include breakpoint(medium) {
-      //padding: 0 mvw(20);
       display: flex;
       align-items: center;
-      margin-top: rem(20);
+      margin-top: mvw(20);
     }
     @include breakpoint(large) {
       display: flex;
       align-items: center;
-      margin-top: mvw(20);
+      margin-top: rem(22);
     }
   }
 
@@ -135,17 +134,29 @@
 
     &:not(:last-child) {
       @include breakpoint(medium) {
-        margin-right: mvw(25);
+        margin-right: mvw(10);
       }
       @include breakpoint(large) {
         margin-right: rem(25);
       }
     }
 
-    &.active,
+    &.#{$active} {
+      font-weight: bold;
+    }
+
     &:hover,
     &:focus {
       text-decoration: underline;
+    }
+
+    &:after {
+      content: attr(title);
+      font-weight: bold;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
     }
   }
 
@@ -156,14 +167,17 @@
     font-size: svw(14);
     transition: $transition;
     @include breakpoint(medium) {
-      margin-top: mvw(22);
-      margin-left: auto;
+      margin-top: 0;
+      position: absolute;
+      top: mvw(7);
+      right: mvw($medium-container-padding);
       padding: 0;
       font-size: mvw(14);
     }
     @include breakpoint(large) {
-      margin-top: rem(22);
-      font-size: rem(18);
+      top: rem(10);
+      right: rem($large-container-padding);
+      font-size: rem(16);
     }
   }
 
@@ -187,7 +201,7 @@
 
   &__mobile-nav {
     display: none;
-    background: rgba($mine-shaft, .9);
+    background: rgba($primary, .7);
     position: fixed;
     top: 0;
     left: 0;
@@ -221,8 +235,8 @@
 
   &__mobile-link {
     font-size: svw(22);
-    line-height: 1.09;
     color: $white;
+    text-decoration: none;
 
     &:hover,
     &:focus {

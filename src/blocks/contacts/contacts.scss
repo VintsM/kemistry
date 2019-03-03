@@ -12,4 +12,15 @@
   &__title {
     color: $white;
   }
+  &__map {
+    height: svw(200);
+    background: url(/img/map.jpg) center no-repeat;
+    background-size: cover;
+    @include breakpoint(medium) {
+      height: mvw(350);
+    }
+    @include breakpoint(large) {
+      height: rem(500);
+    }
+  }
 }

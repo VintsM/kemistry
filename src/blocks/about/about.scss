@@ -7,6 +7,34 @@
     padding-top: rem(50);
   }
   &__item {
+    transition: .5s ease;
+    will-change: opacity;
+    @include breakpoint(medium) {
+      opacity: 0;
+    }
+    &.#{$visible} {
+      @include breakpoint(medium) {
+        opacity: 1;
+      }
+    }
+    &:nth-child(1) {
+      transition-delay: .5s;
+    }
+    &:nth-child(2) {
+      transition-delay: 1s;
+    }
+    &:nth-child(3) {
+      transition-delay: 1.5s;
+    }
+    &:nth-child(4) {
+      transition-delay: 2s;
+    }
+    &:nth-child(5) {
+      transition-delay: 2.5s;
+    }
+    &:nth-child(6) {
+      transition-delay: 3s;
+    }
     &:not(:last-child) {
       margin-bottom: svw(30);
       @include breakpoint(medium) {
@@ -20,6 +48,7 @@
   &__text {
     font-size: svw(20);
     line-height: 1.2;
+    font-weight: 300;
     @include breakpoint(medium) {
       font-size: mvw(20);
     }
