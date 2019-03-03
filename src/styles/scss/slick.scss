@@ -1,0 +1,57 @@
+.slick-slider {
+  .slick-dots {
+    margin: svw(20) 0 0;
+    padding: 0 svw($small-container-padding);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(medium) {
+      margin: mvw(30) 0 0;
+      padding: 0 mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      margin: rem(40) 0 0;
+      padding: 0 rem($large-container-padding);
+    }
+    li {
+      &:not(:last-child) {
+        margin-right: svw(10);
+        @include breakpoint(medium) {
+          margin-right: mvw(10);
+        }
+        @include breakpoint(large) {
+          margin-right: rem(10);
+        }
+      }
+      &.slick-active {
+        button {
+          opacity: 1;
+        }
+      }
+      button {
+        font-size: 0;
+        background-color: $primary;
+        opacity: .4;
+        width: svw(10);
+        height: svw(10);
+        padding: svw(3);
+        border: none;
+        border-radius: 50%;
+        @include breakpoint(medium) {
+          width: mvw(10);
+          height: mvw(10);
+          padding: mvw(3);
+        }
+        @include breakpoint(large) {
+          width: rem(10);
+          height: rem(10);
+          padding: rem(3);
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+}

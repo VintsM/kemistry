@@ -1,0 +1,15 @@
+.contacts {
+  &__header {
+    background-color: $primary;
+    padding: svw(20) 0;
+    @include breakpoint(medium) {
+      padding: mvw(25) 0;
+    }
+    @include breakpoint(large) {
+      padding: rem(30) 0;
+    }
+  }
+  &__title {
+    color: $white;
+  }
+}

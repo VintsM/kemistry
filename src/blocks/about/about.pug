@@ -1,3 +1,5 @@
+include ../title/title
+
 -
   let about = [
   {
@@ -31,5 +33,5 @@ section#about.about
     .about__inner
       each item in about
         .about__item
-          .about__title= item.title
+          +title({tag: 'h2', mods: 'title_1', text: item.title})
           .about__text= item.text

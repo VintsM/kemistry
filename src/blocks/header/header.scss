@@ -6,21 +6,36 @@
     .header {
       &__wrapper {
         background-color: $lavender-rose;
-        box-shadow: 0 1px 11px 0 rgba(0, 0, 0, .3);
+        box-shadow: 0 1px 11px 0 rgba($primary, .3);
         @include breakpoint(large) {
-
+          padding: rem(10) 0;
         }
       }
 
       &__logo {
         @include breakpoint(large) {
           width: rem(130);
+          margin-right: rem(115);
         }
       }
 
       &__nav {
         @include breakpoint(large) {
-          //transform: scale(.7);
+          margin-top: rem(20);
+        }
+      }
+
+      &__nav-item {
+        @include breakpoint(large) {
+          font-size: rem(16);
+          //padding: rem(5);
+        }
+      }
+
+      &__lang {
+        @include breakpoint(large) {
+          margin-top: rem(20);
+          font-size: rem(14);
         }
       }
     }
@@ -58,6 +73,7 @@
     justify-content: space-between;
     align-items: center;
     @include breakpoint(medium) {
+      justify-content: flex-start;
       padding: 0 mvw($medium-container-padding);
     }
     @include breakpoint(large) {
@@ -72,10 +88,12 @@
     transition: $transition;
     @include breakpoint(medium) {
       width: mvw(130);
+      margin-right: mvw(60);
     }
     @include breakpoint(large) {
       width: rem(185);
-      height: rem(83);
+      //height: rem(83);
+      margin-right: rem(60);
     }
   }
 
@@ -86,6 +104,7 @@
 
   &__nav {
     display: none;
+    transition: $transition;
     @include breakpoint(medium) {
       //padding: 0 mvw(20);
       display: flex;
@@ -103,6 +122,7 @@
     display: inline-block;
     color: $primary;
     text-decoration: none;
+    transition: $transition;
     @include breakpoint(medium) {
       font-size: mvw(16);
       line-height: 1.1;
@@ -134,8 +154,10 @@
     margin-top: svw(15);
     padding: 0 svw($small-container-padding);
     font-size: svw(14);
+    transition: $transition;
     @include breakpoint(medium) {
       margin-top: mvw(22);
+      margin-left: auto;
       padding: 0;
       font-size: mvw(14);
     }

@@ -1,0 +1,21 @@
+.clients {
+  &__inner {
+    display: grid;
+    grid-gap: svw(30);
+    grid-template-columns: 1fr 1fr;
+    @include breakpoint(medium) {
+      grid-gap: mvw(40);
+    }
+    @include breakpoint(large) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: rem(30);
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    max-width: 100%;
+  }
+}

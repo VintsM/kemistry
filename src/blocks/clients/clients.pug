@@ -1,0 +1,18 @@
+include ../title/title
+-
+  let clients = [
+    {title: 'Sanofi', img: 'img/logos/sanofi.svg'},
+    {title: 'Айсберри', img: 'img/logos/iceberry.svg'},
+    {title: 'Infiniti', img: 'img/logos/infiniti.svg'},
+    {title: 'Remy Martin', img: 'img/logos/remy.svg'},
+    {title: 'Diageo', img: 'img/logos/diageo.svg'},
+    {title: 'Cointreau', img: 'img/logos/cointreau.svg'}
+  ];
+
+section.section.clients
+  .container
+    +title({tag: 'h2', mods: 'title_1 section__title', text: 'Наши клиенты'})
+    .clients__inner
+      each item in clients
+        .clients__item
+          img(src=item.img alt=item.title).clients__img

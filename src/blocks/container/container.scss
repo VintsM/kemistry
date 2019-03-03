@@ -1,10 +1,12 @@
 .container {
-  max-width: $global-width;
+  margin: 0 auto;
   padding: 0 svw($small-container-padding);
   @include breakpoint(medium) {
     padding: 0 mvw($medium-container-padding);
+    max-width: 450px;
   }
   @include breakpoint(large) {
     padding: 0 rem($large-container-padding);
+    max-width: 700px;
   }
 }

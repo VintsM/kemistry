@@ -1,0 +1,18 @@
+.section {
+  padding: svw(30) 0;
+  @include breakpoint(medium) {
+    padding: mvw(40) 0;
+  }
+  @include breakpoint(large) {
+    padding: rem(50) 0;
+  }
+  &__title {
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(40);
+    }
+  }
+}

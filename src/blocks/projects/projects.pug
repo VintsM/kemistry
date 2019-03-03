@@ -1,0 +1,23 @@
+include ../title/title
+-
+  let projects = [
+  {text: 'Гутталакс', link: '/'},
+  {text: 'Infiniti QX80', link: '/'},
+  {text: 'Infiniti QX60', link: '/'},
+  {text: 'Infiniti Q30 и&nbsp;QX30', link: '/'},
+  {text: 'Infiniti QX60 и&nbsp;QX80',link: '/'},
+  {text: 'Remy Martin', link: '/'},
+  {text: 'Цикловое совещание Sanofi', link: '/'},
+  {text: 'Неделя здоровья Sanofi', link: '/'},
+  {text: 'Sanofi cleanup day', link: '/'},
+  {text: 'Capitan Morgan', link: '/'}
+  ];
+
+section.section.projects
+  .container
+    +title({tag: 'h2', mods: 'title_1 section__title', text: 'Наши проекты'})
+  .projects__inner
+    .projects__slider.js-projects-slider
+      each item in projects
+        .projects__item
+          a(href=item.link).projects__item-inner!= item.text

@@ -1,0 +1,91 @@
+.footer {
+  background-color: $primary;
+  color: $white;
+  padding: svw(10) 0;
+  font-size: svw(16);
+  position: relative;
+  z-index: 1;
+  @include breakpoint(medium) {
+    padding: mvw(20) 0;
+    font-size: mvw(16);
+  }
+  @include breakpoint(large) {
+    padding: rem(20) 0;
+    font-size: rem(16);
+  }
+
+  &__inner {
+    padding: 0 svw($small-container-padding);
+    max-width: $global-width;
+    @include breakpoint(medium) {
+      padding: 0 mvw($medium-container-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include breakpoint(large) {
+      padding: 0 rem($large-container-padding);
+    }
+  }
+
+  &__logo {
+    width: svw(120);
+    margin-bottom: svw(15);
+    @include breakpoint(medium) {
+      width: mvw(130);
+      margin-bottom: 0;
+    }
+    @include breakpoint(large) {
+      width: rem(160);
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    margin-bottom: svw(15);
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      margin-top: mvw(20);
+    }
+  }
+
+  &__contacts {
+    color: $white;
+    margin-bottom: svw(15);
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      margin-top: mvw(20);
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    line-height: 1.2;
+
+    &:focus {
+      outline-color: $white;
+    }
+  }
+
+  &__social {
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+    }
+  }
+
+  &__social-link {
+    display: inline-block;
+    padding: 0 svw(5);
+  }
+
+  &__social-img {
+    height: svw(30);
+    @include breakpoint(medium) {
+      height: mvw(30);
+    }
+    @include breakpoint(large) {
+      height: rem(30);
+    }
+  }
+}

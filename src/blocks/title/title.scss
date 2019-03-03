@@ -1,0 +1,14 @@
+.title {
+  &_1 {
+    font-family: $alt-font;
+    font-weight: 900;
+    font-size: svw(34);
+    line-height: 1;
+    @include breakpoint(medium) {
+      font-size: mvw(54);
+    }
+    @include breakpoint(large) {
+      font-size: rem(54);
+    }
+  }
+}

@@ -3,7 +3,9 @@ define(function(require){
 // import './common';
 // import '../blocks/header/header';
     require('common');
+    require('parallax');
     require('header');
+    require('projects');
 });
 
 

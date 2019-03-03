@@ -1,0 +1,19 @@
+include ../title/title
+-
+  let services = [
+  'Креатив',
+  'Продакшен',
+  'Digital',
+  'PR и эвенты',
+  'Дизайн',
+  'Стратегия',
+  'Брэндинг',
+  'BTL'
+  ];
+
+section.section.services
+  .container
+    +title({tag: 'h2', mods: 'title_1 section__title', text: 'Наши услуги'})
+    ul.services__list
+      each item in services
+        li.services__item!= item

@@ -4,7 +4,16 @@ body {
 }
 
 body {
+  background-color: $white;
   color: $primary;
   font-family: $main-font;
-  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }

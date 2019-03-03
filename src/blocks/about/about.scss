@@ -6,23 +6,15 @@
   @include breakpoint(large) {
     padding-top: rem(50);
   }
-  &__inner {
-    @include breakpoint(medium) {
-
-    }
-  }
   &__item {
-    margin-bottom: svw(30);
-  }
-  &__title {
-    font-family: $alt-font;
-    font-size: svw(34);
-    line-height: 1;
-    @include breakpoint(medium) {
-      font-size: mvw(54);
-    }
-    @include breakpoint(large) {
-      font-size: rem(54);
+    &:not(:last-child) {
+      margin-bottom: svw(30);
+      @include breakpoint(medium) {
+        margin-bottom: mvw(40);
+      }
+      @include breakpoint(large) {
+        margin-bottom: rem(50);
+      }
     }
   }
   &__text {

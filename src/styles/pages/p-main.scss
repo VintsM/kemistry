@@ -1,0 +1,125 @@
+.p-main {
+  background-image: linear-gradient(315deg, rgba(238, 127, 238, 0.42), rgba(247, 149, 164, 0.6), rgba(255, 204, 141, 0.53), rgba(247, 149, 164, 0.58), rgba(240, 131, 226, 0.44), rgba(238, 127, 238, 0.29));
+  background-color: $white;
+  position: relative;
+  &__content {
+
+  }
+  //&__inner {
+  //  display: grid;
+  //  grid-template-columns: 100px 1fr;
+  //  grid-column-gap: rem(70);
+  //}
+  //&__menu {
+  //  max-width: rem(100);
+  //  font-size: rem(10);
+  //}
+  //&__menu-item {
+  //  display: block;
+  //  margin-bottom: rem(7);
+  //  text-decoration: none;
+  //  &:hover {
+  //    color: $white;
+  //  }
+  //}
+  &__img {
+    position: absolute;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+    &_far {
+      filter: blur(5px);
+      width: mvw(200);
+      @include breakpoint(large) {
+        width: rem(200);
+      }
+    }
+    &_1 {
+      //top: mvw(200);
+      //right: mvw(50);
+      @include breakpoint(large) {
+        top: rem(200);
+        right: rem(120);
+      }
+    }
+    &_2 {
+      //top: svw(400);
+      //right: svw(80);
+      @include breakpoint(large) {
+        top: rem(1800);
+        right: rem(50);
+      }
+    }
+    &_3 {
+      //top: svw(600);
+      //right: svw(10);
+      @include breakpoint(large) {
+        top: rem(2400);
+        right: rem(80);
+      }
+    }
+  }
+  &__circle {
+    background-image: linear-gradient(315deg, rgba(238, 127, 238, .49), rgba(247, 149, 164, .53), rgba(255, 204, 141, .55));
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+    &_far {
+      filter: blur(5px);
+      width: rem(300);
+      height: rem(300);
+      &_1 {
+        top: rem(500);
+        left: rem(20);
+      }
+      &_2 {
+        top: rem(1800);
+        right: rem(30);
+      }
+      &_3 {
+        top: rem(2500);
+        left: rem(50);
+      }
+    }
+    &_medium {
+      filter: blur(2px);
+      width: rem(200);
+      height: rem(200);
+      &_1 {
+        top: rem(400);
+        left: rem(70);
+      }
+      &_2 {
+        top: rem(1600);
+        right: rem(60);
+      }
+      &_3 {
+        top: rem(2300);
+        left: rem(30);
+      }
+    }
+    &_front {
+      width: rem(100);
+      height: rem(100);
+      &_1 {
+        top: rem(700);
+        left: rem(50);
+      }
+      &_2 {
+        top: rem(1700);
+        right: rem(50);
+      }
+      &_3 {
+        top: rem(2200);
+        left: rem(70);
+      }
+    }
+  }
+  &__content {
+    position: relative;
+  }
+}
