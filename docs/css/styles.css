@@ -907,7 +907,7 @@ h6 {
 
 .contacts__map {
   height: 62.5vw;
-  background: url(/img/map.jpg) center no-repeat;
+  background: url(../img/map.jpg) center no-repeat;
   background-size: cover;
 }
 

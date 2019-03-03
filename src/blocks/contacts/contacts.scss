@@ -14,7 +14,7 @@
   }
   &__map {
     height: svw(200);
-    background: url(/img/map.jpg) center no-repeat;
+    background: url(../img/map.jpg) center no-repeat;
     background-size: cover;
     @include breakpoint(medium) {
       height: mvw(350);
