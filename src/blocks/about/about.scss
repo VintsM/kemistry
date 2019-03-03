@@ -9,13 +9,9 @@
   &__item {
     transition: .5s ease;
     will-change: opacity;
-    @include breakpoint(medium) {
-      opacity: 0;
-    }
+    opacity: 0;
     &.#{$visible} {
-      @include breakpoint(medium) {
-        opacity: 1;
-      }
+      opacity: 1;
     }
     &:nth-child(1) {
       transition-delay: .5s;

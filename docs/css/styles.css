@@ -772,7 +772,12 @@ h6 {
 .about__item {
   -webkit-transition: .5s ease;
   transition: .5s ease;
+  opacity: 0;
   will-change: opacity;
+}
+
+.about__item._visible {
+  opacity: 1;
 }
 
 .about__item:nth-child(1) {
@@ -1073,14 +1078,6 @@ h6 {
 
   .about {
     padding-top: 5.20833vw;
-  }
-
-  .about__item {
-    opacity: 0;
-  }
-
-  .about__item._visible {
-    opacity: 1;
   }
 
   .about__item:not(:last-child) {
