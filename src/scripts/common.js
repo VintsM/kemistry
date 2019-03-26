@@ -23,15 +23,28 @@ define(['jquery'], function( $ ) {
 
   $('body').pageStatus();
 
-  $('a[href*="#"]').on('click', function (event) {
-    var anchor = this.getAttribute('href').split('#').pop();
+  function scrollToTarget (anchor) {
+    let target = $(anchor);
+    let targetOffsetTop = target.offset().top - $('.js-header').outerHeight();
+
+    $('html, body').animate({
+      scrollTop: targetOffsetTop
+    }, 800);
+  }
+
+  $('a[href^="#"]').on('click', function (event) {
+    let anchor = this.getAttribute('href');
+
     if (anchor.length) {
-      var target = $('#' + anchor);
       event.preventDefault();
-      var targetOffsetTop = target.offset().top - $('.js-header').outerHeight();
-      $('html, body').animate({
-        scrollTop: targetOffsetTop
-      }, 800);
+      history.pushState({}, '', anchor);
+      scrollToTarget(anchor);
     }
   });
+
+  let hash = location.hash;
+
+  if (hash) {
+    scrollToTarget(hash);
+  }
 });

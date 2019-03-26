@@ -10826,17 +10826,30 @@ define('common',['jquery'], function( $ ) {
 
   $('body').pageStatus();
 
-  $('a[href*="#"]').on('click', function (event) {
-    var anchor = this.getAttribute('href').split('#').pop();
+  function scrollToTarget (anchor) {
+    let target = $(anchor);
+    let targetOffsetTop = target.offset().top - $('.js-header').outerHeight();
+
+    $('html, body').animate({
+      scrollTop: targetOffsetTop
+    }, 800);
+  }
+
+  $('a[href^="#"]').on('click', function (event) {
+    let anchor = this.getAttribute('href');
+
     if (anchor.length) {
-      var target = $('#' + anchor);
       event.preventDefault();
-      var targetOffsetTop = target.offset().top - $('.js-header').outerHeight();
-      $('html, body').animate({
-        scrollTop: targetOffsetTop
-      }, 800);
+      history.pushState({}, '', anchor);
+      scrollToTarget(anchor);
     }
   });
+
+  let hash = location.hash;
+
+  if (hash) {
+    scrollToTarget(hash);
+  }
 });
 define('utils',['jquery'], function($) {
     return {
@@ -10951,7 +10964,10 @@ define('header',['jquery', 'utils'], function ($, utils) {
 
     function headerNavActivityCheck () {
       $('.js-header-nav-item').each(function (index, el) {
-        let target = $($(el).attr('href'));
+        let href = $(el).attr('href');
+        if (!href.startsWith('#'))
+          return;
+        let target = $(href);
         if (window.scrollY > (target.offset().top - 150)) {
           $(el).addClass(utils.vars.classActive).siblings().removeClass(utils.vars.classActive);
         }
@@ -13994,7 +14010,7 @@ define('about',['jquery', 'utils'], function ($, utils) {
 
 define('projects',['slick'], function( slick ) {
     $('.js-projects-slider').slick({
-        arrows: false,
+        arrows: true,
         dots: true,
         variableWidth: true,
         centerMode: true

@@ -1,16 +1,16 @@
 include ../title/title
 -
   let projects = [
-  {text: 'Гутталакс', link: '/'},
-  {text: 'Infiniti QX80', link: '/'},
-  {text: 'Infiniti QX60', link: '/'},
-  {text: 'Infiniti Q30 и&nbsp;QX30', link: '/'},
-  {text: 'Infiniti QX60 и&nbsp;QX80',link: '/'},
-  {text: 'Remy Martin', link: '/'},
-  {text: 'Цикловое совещание Sanofi', link: '/'},
-  {text: 'Неделя здоровья Sanofi', link: '/'},
-  {text: 'Sanofi cleanup day', link: '/'},
-  {text: 'Capitan Morgan', link: '/'}
+  {text: 'Гутталакс', link: '/', img: '/img/projects/gutalax@2x.png'},
+  {text: 'Infiniti QX80', link: '/', img: '/img/projects/qx80@2x.png'},
+  {text: 'Infiniti QX60', link: '/', img: '/img/projects/qx60@2x.png'},
+  {text: 'Infiniti Q30 и&nbsp;QX30', link: '/q30-qx30.html', img: '/img/projects/q30@2x.png'},
+  {text: 'Infiniti QX60 и&nbsp;QX80',link: '/', img: '/img/projects/qx60-qx80@2x.png'},
+  {text: 'Remy Martin', link: '/', img: '/img/projects/rm2@2x.png'},
+  {text: 'Цикловое совещание Sanofi', link: '/sanofi.html', img: '/img/projects/sanofi@2x.png'},
+  {text: 'Неделя здоровья Sanofi', link: '/sanofi-health-week.html', img: '/img/projects/hse@2x.png'},
+  {text: 'Sanofi cleanup day', link: '/sanofi-cleanup.html', img: '/img/projects/cleanup@2x.png'},
+  {text: 'Capitan Morgan', link: '/capitan-morgan.html', img: '/img/projects/Cap_morgan@2x.png'}
   ];
 
 section#projects.section.projects
@@ -19,5 +19,5 @@ section#projects.section.projects
   .projects__inner
     .projects__slider.js-projects-slider
       each item in projects
-        .projects__item
+        .projects__item(style='background-image: url(' + item.img + ');')
           a(href=item.link).projects__item-inner!= item.text

@@ -1,0 +1,34 @@
+include ../title/title
+
+mixin project(data)
+  .project
+    +title({
+      tag: 'h1',
+      text: data.title,
+      mods: 'title_2 project__title'
+    })
+    .project__preview
+      if data.preview.images
+        each img in data.preview.images
+          img(src=img.src alt=img.alt).project__preview-img
+    each item in data.descriptions
+      +project-description(item)
+    if data.result
+      .project__result
+        .project__result-img-container
+          img(src='/img/aim.svg' alt='Цель').project__result-img
+        .project__result-content
+          each item in data.result
+            .project__result-item
+              +title({
+                tag: 'h3',
+                text: item.title,
+                mods: 'title_3 project__result-title'
+              })
+              .project__result-text!= item.text
+
+
+mixin project-description(data)
+  .project__description
+    .project__subtitle!= data.subtitle + ':'
+    .project__text!= data.text

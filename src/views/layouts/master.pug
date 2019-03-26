@@ -1,11 +1,16 @@
 include ../../blocks/icon/icon
 
+block vars
+  -
+    let title = 'Рекламное агентство Kemistry';
+    let description = 'Рекламное агентство Kemistry';
+
 doctype html
 html(lang='ru')
   head
-    title Рекламное агентство Kemistry
+    title= title
     meta(http-equiv='X-UA-Compatible', content='text/html', charset='utf-8')
-    meta(name='description' content='Рекламное агентство Kemistry')
+    meta(name='description' content=description)
     meta(name='viewport' content='width=device-width')
     link(href='./css/styles.css' rel='stylesheet')
     link(href='./favicon.ico' rel='shortcut icon')

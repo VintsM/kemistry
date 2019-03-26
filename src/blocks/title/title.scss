@@ -11,4 +11,17 @@
       font-size: rem(54);
     }
   }
+  &_2 {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: svw(28);
+    text-transform: uppercase;
+    line-height: 1;
+    @include breakpoint(medium) {
+      font-size: mvw(36);
+    }
+    @include breakpoint(large) {
+      font-size: rem(36);
+    }
+  }
 }

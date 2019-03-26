@@ -1,0 +1,41 @@
+extend ../layouts/master
+
+block vars
+    -
+        let title = 'SANOFI Cleanup day';
+        let description = 'SANOFI Cleanup day';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'SANOFI Cleanup day',
+                preview: {
+                    images: [
+                        {
+                            src: '/img/projects/cleanup@2x.png',
+                            alt: 'SANOFI Cleanup day'
+                        }
+                    ]
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Cleanup Day – ежегодное мероприятие, в ходе которого сотрудники должны навести порядок на столах и сдать документы в архив. Проблема – привлечь внимание людей, которые сильно заняты другими делами.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'Были созданы герои кот Шредер и хомяк Арчи – архивариус, вокруг которых строились все активности. Для мероприятия были подготовлены анимационные ролики, напечатаны комиксы, и нестандартные конструкции из картона , создана  айдентика  и сувениры. В день мероприятия, по офису ходили актеры в костюмах Арчи и Шредера, мотивируя сотрудников к участию.'
+                    }
+                ],
+                result: [
+                    {
+                        text: 'Первый  Cleanup Day, который привлек внимание и вызвал положительную реакцию сотрудников.'
+                    }
+                ]
+            })

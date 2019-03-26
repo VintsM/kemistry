@@ -2,38 +2,6 @@
   background-image: linear-gradient(315deg, rgba(238, 127, 238, 0.42), rgba(247, 149, 164, 0.6), rgba(255, 204, 141, 0.53), rgba(247, 149, 164, 0.58), rgba(240, 131, 226, 0.44), rgba(238, 127, 238, 0.29));
   background-color: $white;
   position: relative;
-  &__img {
-    position: absolute;
-    display: none;
-    @include breakpoint(large) {
-      display: block;
-    }
-    &_far {
-      filter: blur(5px);
-      width: mvw(200);
-      @include breakpoint(large) {
-        width: rem(200);
-      }
-    }
-    &_1 {
-      @include breakpoint(large) {
-        top: rem(200);
-        right: rem(120);
-      }
-    }
-    &_2 {
-      @include breakpoint(large) {
-        top: rem(1800);
-        right: rem(50);
-      }
-    }
-    &_3 {
-      @include breakpoint(large) {
-        top: rem(2400);
-        right: rem(80);
-      }
-    }
-  }
   &__circle {
     background-image: linear-gradient(315deg, rgba(238, 127, 238, .49), rgba(247, 149, 164, .53), rgba(255, 204, 141, .55));
     border-radius: 50%;
@@ -43,7 +11,6 @@
       display: block;
     }
     &_far {
-      filter: blur(5px);
       width: rem(300);
       height: rem(300);
       &_1 {
@@ -68,7 +35,6 @@
       }
     }
     &_medium {
-      filter: blur(2px);
       width: rem(200);
       height: rem(200);
       &_1 {
@@ -93,7 +59,6 @@
       }
     }
     &_front {
-      filter: blur(1px);
       width: rem(100);
       height: rem(100);
       &_1 {

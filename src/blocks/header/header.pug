@@ -2,6 +2,7 @@ include ../burger/burger
 
 mixin header(data)
   -
+    data = data || {};
     let menu = [
     {text: 'Об агентстве', link: '#about'},
     {text: 'Клиенты', link: '#clients'},
@@ -19,7 +20,7 @@ mixin header(data)
         .container.header__nav-wrapper
           nav.header__nav
             each item in menu
-              a(href=item.link title=item.text).header__nav-item.js-header-nav-item= item.text
+              a(href=(data.inner ? '/' + item.link : item.link) title=item.text).header__nav-item.js-header-nav-item= item.text
         .header__lang
           span.header__lang-text Рус
           =' '

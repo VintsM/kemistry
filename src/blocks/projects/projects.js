@@ -1,6 +1,6 @@
 define(['slick'], function( slick ) {
     $('.js-projects-slider').slick({
-        arrows: false,
+        arrows: true,
         dots: true,
         variableWidth: true,
         centerMode: true

@@ -1,0 +1,36 @@
+extend ../layouts/master
+
+block vars
+    -
+        let title = 'Captain Morgan';
+        let description = 'Captain Morgan';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'Captain Morgan',
+                preview: {
+                    images: [
+                        {
+                            src: '/img/projects/Cap_morgan@2x.png',
+                            alt: 'Captain Morgan'
+                        }
+                    ]
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Нести в массы ценности бренда рома  Капитан Морган, не используя прямую рекламу. Провести ПР-кампанию с  активациями в оффлайн и диджитал.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'Уникальный Live-квест в Инстаграмс поисками капитанских сокровищ, коллаборация с барбершопами Чоп-Чоп в рамках серии вечеринок Boroda Party, интеграция в фестиваль Faces&Laces, комплексная ПР-поддержка кампания. Вечеринки собрали более 3000 гостей. Мы получили множество публикаций в соцсетях хэштегом #живикаккапитан. О кампании написали ведущие СМИ.'
+                    }
+                ]
+            })

@@ -1,0 +1,49 @@
+extend ../layouts/master
+
+block vars
+    -
+        let title = 'Infiniti Q30 и QX30';
+        let description = 'Infiniti Q30 и QX30';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'Infiniti Q30 и QX30',
+                preview: {
+                    images: [
+                        {
+                            src: '/img/projects/qx30@2x.png',
+                            alt: 'Infiniti QX30'
+                        },
+                        {
+                            src: '/img/projects/q30@2x.png',
+                            alt: 'Infiniti Q30'
+                        },
+                        {
+                            src: '/img/projects/q30_2@2x.png',
+                            alt: 'Infiniti Q30'
+                        }
+                    ]
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Лонч двух совершенно новых для INFINITI моделей – премиального хэчбека Q30 и компактного городского кроссовера QX30.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'Найти общий язык с молодой креативной аудиторией. Основные каналы – digital, наружная реклама, радио, ТВ. В дело пошло все – барбершопы и бархоппинг, селфи и лайки. А еще много новых горячих хэштегов. Q30 и QX30 действительно стали новыми легендами большого города, о которых мечтают миллениалы.'
+                    }
+                ],
+                result: [
+                    {
+                        text: 'В 2.5 раза больше тест-драйвов'
+                    }
+                ]
+            })

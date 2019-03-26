@@ -10,7 +10,10 @@ define(['jquery', 'utils'], function ($, utils) {
 
     function headerNavActivityCheck () {
       $('.js-header-nav-item').each(function (index, el) {
-        let target = $($(el).attr('href'));
+        let href = $(el).attr('href');
+        if (!href.startsWith('#'))
+          return;
+        let target = $(href);
         if (window.scrollY > (target.offset().top - 150)) {
           $(el).addClass(utils.vars.classActive).siblings().removeClass(utils.vars.classActive);
         }

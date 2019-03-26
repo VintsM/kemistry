@@ -2,34 +2,21 @@
   color: $primary;
   font-weight: 400;
 
+  &.header_main {
+    &.#{$active} {
+      .header {
+        &__wrapper {
+          background-color: $lavender-rose;
+        }
+      }
+    }
+  }
+
   &.#{$active} {
     .header {
       &__wrapper {
-        background-color: $lavender-rose;
+        background-color: $white;
         box-shadow: 0 1px 11px 0 rgba($primary, .3);
-        @include breakpoint(large) {
-          padding: rem(10) 0 rem(15);
-        }
-      }
-
-      &__logo {
-        @include breakpoint(large) {
-          width: rem(130);
-          margin-right: rem(50);
-        }
-      }
-
-      &__nav-item {
-        @include breakpoint(large) {
-          font-size: rem(16);
-        }
-      }
-
-      &__lang {
-        @include breakpoint(large) {
-          font-size: rem(14);
-          top: rem(5);
-        }
       }
     }
   }
@@ -109,11 +96,13 @@
       display: flex;
       align-items: center;
       margin-top: mvw(20);
+      margin-left: mvw(-5);
     }
     @include breakpoint(large) {
       display: flex;
       align-items: center;
       margin-top: rem(22);
+      margin-left: rem(-5);
     }
   }
 
