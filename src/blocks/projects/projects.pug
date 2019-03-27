@@ -4,8 +4,8 @@ include ../title/title
   {text: 'Гутталакс', link: '/', img: './img/projects/gutalax@2x.png'},
   {text: 'Infiniti QX80', link: '/', img: './img/projects/qx80@2x.png'},
   {text: 'Infiniti QX60', link: '/', img: './img/projects/qx60@2x.png'},
-  {text: 'Infiniti Q30 и&nbsp;QX30', link: './q30-qx30.html', img: '/img/projects/q30@2x.png'},
-  {text: 'Infiniti QX60 и&nbsp;QX80',link: '/', img: '../img/projects/qx60-qx80@2x.png'},
+  {text: 'Infiniti Q30 и&nbsp;QX30', link: '/q30-qx30.html', img: './img/projects/q30@2x.png'},
+  {text: 'Infiniti QX60 и&nbsp;QX80',link: '/', img: './img/projects/qx60-qx80@2x.png'},
   {text: 'Remy Martin', link: '/', img: './img/projects/rm2@2x.png'},
   {text: 'Цикловое совещание Sanofi', link: '/kemistry/sanofi.html', img: './img/projects/sanofi@2x.png'},
   {text: 'Неделя здоровья Sanofi', link: '/kemistry/sanofi-health-week.html', img: './img/projects/hse@2x.png'},
@@ -19,5 +19,6 @@ section#projects.section.projects
   .projects__inner
     .projects__slider.js-projects-slider
       each item in projects
-        .projects__item(style='background-image: url(' + item.img + ');')
-          a(href=item.link).projects__item-inner!= item.text
+        .projects__item
+          .projects__item-inner(style='background-image: url(' + item.img + ');')
+            a(href=item.link).projects__item-overlay!= item.text

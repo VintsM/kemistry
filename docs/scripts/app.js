@@ -14013,7 +14013,15 @@ define('projects',['slick'], function( slick ) {
         arrows: true,
         dots: true,
         variableWidth: true,
-        centerMode: true
+        centerMode: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
     })
 });
 define('src/scripts/app.js',['require','common','parallax','header','burger','about','projects'],function(require) {
