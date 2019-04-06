@@ -1,0 +1,54 @@
+extend ../layouts/project
+
+block vars
+    -
+        let title = 'INFINITI QX60 и QX80';
+        let description = 'INFINITI QX60 и QX80';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'INFINITI  QX60 и QX80',
+                preview: {
+                    images: [
+                        {
+                            src: './img/projects/qx60_2@2x.png',
+                            alt: 'INFINITI QX60'
+                        },
+                        {
+                            src: './img/projects/qx80@2x.png',
+                            alt: 'INFINITI QX80'
+                        },
+                        {
+                            src: './img/projects/qx60-qx80@2x.png',
+                            alt: 'INFINITI QX6 0и QX80'
+                        }
+                    ]
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Поддержать продажи двух самых популярных внедорожников INFINITI – QX60 И QX80 в конце 2017 года.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'На пике популярности рэп баттлов мы предложили устроить баттл между брутальным QX80 и семейным QX60. Нам это удалось сделать не только в радио ролике и но в серии макетов наружной рекламы. Слоганы можно было читать как по отдельности, так и в виде целого текста.'
+                    }
+                ],
+                result: [
+                    {
+                        title: 'QX80',
+                        text: 'Если реагировать, то резко<br />Твоя судьба быть дерзким<br />Не проспи, как с биткоином<br />Будь четким, но спокойным'
+                    },
+                    {
+                        title: 'QX60',
+                        text: 'Твоя семейная ценностьо<br />Лучше чем новый черныйо<br />На дороге, на стиле, в трендео<br />Ты за семью в ответе'
+                    }
+                ]
+            })

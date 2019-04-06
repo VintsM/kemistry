@@ -1,0 +1,41 @@
+extend ../layouts/project
+
+block vars
+    -
+        let title = 'INFINITI QX80';
+        let description = 'INFINITI QX80';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'INFINITI QX80',
+                preview: {
+                    images: [
+                        {
+                            src: './img/projects/qx80@2x.png',
+                            alt: 'INFINITI QX80'
+                        }
+                    ]
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Выход на рынок нового поколения легендарных внедорожников INFINITI QX80. Это топовая модель в линейке бренда. Мы должны были привлечь внимание к ее появлению и коммуницировать роскошь и статус нового QX80.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'Мы разработали интегрированную кампанию, включающую локализацию ТВ ролика, радио, диджитал и серию макетов наружной рекламы. Мы начали с интригующих тизеров, сообщающих, что «город замер в ожидании избранного».'
+                    }
+                ],
+                result: [
+                    {
+                        text: 'Реклама была таргетированно размещена на Рублево-Успенском шоссе и привлекла внимание ЦА.'
+                    }
+                ]
+            })

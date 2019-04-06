@@ -8,11 +8,17 @@ mixin project(data)
       mods: 'title_2 project__title'
     })
     .project__preview
+      if data.preview.video
+        .project__preview-video-container
+          iframe(src='https://player.vimeo.com/video/' + data.preview.video + '?portrait=0' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen).project__preview-video
       if data.preview.images
         each img in data.preview.images
           img(src=img.src alt=img.alt).project__preview-img
     each item in data.descriptions
-      +project-description(item)
+      if item.images
+        +project-images(item)
+      else
+        +project-description(item)
     if data.result
       .project__result
         .project__result-img-container
@@ -32,3 +38,9 @@ mixin project-description(data)
   .project__description
     .project__subtitle!= data.subtitle + ':'
     .project__text!= data.text
+
+mixin project-images(data)
+  .project__images(class=makeMods(data.mods, 'project__images'))
+    each img in data.images
+      .project__images-item(class=makeMods(img.mods, 'project__images-item'))
+        img(src=img.src alt=img.alt).project__image

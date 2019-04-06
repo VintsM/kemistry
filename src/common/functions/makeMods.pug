@@ -1,0 +1,12 @@
+-
+  function makeMods (mods, name) {
+    if (mods!= undefined && Array.isArray(mods)) {
+      let value = '';
+      mods.forEach(function (element) {
+        value += name + '_' + element;
+      });
+      return value;
+    } else {
+      return '';
+    }
+  }

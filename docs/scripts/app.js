@@ -14016,13 +14016,17 @@ define('projects',['slick'], function( slick ) {
         centerMode: true
     })
 });
-define('src/scripts/app.js',['require','common','parallax','header','burger','about','projects'],function(require) {
-    require('common');
-    require('parallax');
-    require('header');
-    require('burger');
-    require('about');
-    require('projects');
+define('src/scripts/app.js',['require','jquery','common','parallax','header','burger','about','projects'],function(require) {
+    let $ = require('jquery');
+
+    $(document).ready(function () {
+        require('common');
+        require('parallax');
+        require('header');
+        require('burger');
+        require('about');
+        require('projects');
+    });
 });
 
 

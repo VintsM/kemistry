@@ -1,9 +1,9 @@
-extend ../layouts/master
+extend ../layouts/project
 
 block vars
     -
-        let title = 'Infiniti Q30 и QX30';
-        let description = 'Infiniti Q30 и QX30';
+        let title = 'INFINITI Q30 и QX30';
+        let description = 'INFINITI Q30 и QX30';
 
 block content
     .p-project
@@ -14,22 +14,9 @@ block content
         .container
             include ../../blocks/project/project
             +project({
-                title: 'Infiniti Q30 и QX30',
+                title: 'INFINITI Q30 и QX30',
                 preview: {
-                    images: [
-                        {
-                            src: './img/projects/qx30@2x.png',
-                            alt: 'Infiniti QX30'
-                        },
-                        {
-                            src: './img/projects/q30@2x.png',
-                            alt: 'Infiniti Q30'
-                        },
-                        {
-                            src: './img/projects/q30_2@2x.png',
-                            alt: 'Infiniti Q30'
-                        }
-                    ]
+                    video: '327925285'
                 },
                 descriptions: [
                     {

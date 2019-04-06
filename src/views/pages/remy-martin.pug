@@ -1,0 +1,72 @@
+extend ../layouts/project
+
+block vars
+    -
+        let title = 'Remy Martin';
+        let description = 'Remy Martin';
+
+block content
+    .p-project
+        include ../../blocks/header/header
+        +header({
+            inner: true
+        })
+        .container
+            include ../../blocks/project/project
+            +project({
+                title: 'Remy Martin',
+                preview: {
+                    video: '327925072'
+                },
+                descriptions: [
+                    {
+                        subtitle: 'Задача',
+                        text: 'Привлечь внимание к бренду без использования прямой рекламы.'
+                    },
+                    {
+                        subtitle: 'Решение',
+                        text: 'Комплексная коммуникационная кампания, включающая уникальный диджитал контент, SMM, PR-поддержка и громкий эвент. Слэшеры – это люди, которые успешно реализуют себя сразу в нескольких профессиональных областях. Именно они стали героями новой коммуникационной платформы Remy Martin – One Life/Live Them. Мы привлекли к участию в нашем проекте Кирилла Серебренникова – режиссера кино и театра, основателя Гоголь-центра, художника и архитектора. Мы сняли о нем фильм в 3 частях и тизерный ролик, который предшествовал появлению фильма в сети.'
+                    },
+                    {
+                        images: [
+                            {
+                                mods: ['100'],
+                                src: './img/projects/rm@2x.png',
+                                alt: 'Remy Martin'
+                            },
+                            {
+                                mods: ['100'],
+                                src: './img/projects/rm2@2x.png',
+                                alt: ''
+                            },
+                            {
+                                mods: ['100'],
+                                src: './img/projects/rm3@2x.png',
+                                alt: ''
+                            },
+                            {
+                                mods: ['50'],
+                                src: './img/projects/rm4@2x.png',
+                                alt: ''
+                            },
+                            {
+                                mods: ['50'],
+                                src: './img/projects/rm5@2x.png',
+                                alt: 'Екатерина Климова'
+                            }
+                        ]
+                    },
+                    {
+                        subtitle: 'One life/Live them',
+                        text: '— Продвижение фильма через SMM и тизерные ролики<br />— PR-поддержка проекта<br />— Инфорпартнерство с lenta.ru<br />— Организация и проведение закрытого показа фильма СМИ, блогеров и селебрити.'
+                    }
+                ],
+                result: [
+                    {
+                        text: 'Более 1 000 000 просмотров'
+                    },
+                    {
+                        text: 'Более 60 публикаций'
+                    }
+                ]
+            })
