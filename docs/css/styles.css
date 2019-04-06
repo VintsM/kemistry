@@ -783,36 +783,6 @@ h6 {
   opacity: 1;
 }
 
-.about__item:nth-child(1) {
-  -webkit-transition-delay: .5s;
-  transition-delay: .5s;
-}
-
-.about__item:nth-child(2) {
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
-}
-
-.about__item:nth-child(3) {
-  -webkit-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-}
-
-.about__item:nth-child(4) {
-  -webkit-transition-delay: 2s;
-  transition-delay: 2s;
-}
-
-.about__item:nth-child(5) {
-  -webkit-transition-delay: 2.5s;
-  transition-delay: 2.5s;
-}
-
-.about__item:nth-child(6) {
-  -webkit-transition-delay: 3s;
-  transition-delay: 3s;
-}
-
 .about__item:not(:last-child) {
   margin-bottom: 9.375vw;
 }
