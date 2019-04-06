@@ -14,7 +14,7 @@
       padding: rem(10);
     }
   }
-  &__item {
+  &__item-inner {
     text-align: center;
     box-sizing: border-box;
     background-position: center;
@@ -24,7 +24,7 @@
     box-shadow: 0 0 11px 0 rgba($primary, .3);
     overflow: hidden;
   }
-  &__item-inner {
+  &__item-overlay {
     display: flex;
     justify-content: center;
     align-items: center;

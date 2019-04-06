@@ -19,5 +19,6 @@ section#projects.section.projects
   .projects__inner
     .projects__slider.js-projects-slider
       each item in projects
-        .projects__item(style='background-image: url(' + item.img + ');')
-          a(href=item.link).projects__item-inner!= item.text
+        .projects__item
+          .projects__item-inner(style='background-image: url(' + item.img + ');')
+            a(href=item.link).projects__item-overlay!= item.text

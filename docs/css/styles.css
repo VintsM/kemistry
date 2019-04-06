@@ -864,13 +864,13 @@ h6 {
   padding: 3.125vw;
 }
 
-.projects__item,
-.projects__item-inner {
+.projects__item-inner,
+.projects__item-overlay {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.projects__item {
+.projects__item-inner {
   overflow: hidden;
   text-align: center;
   border-radius: 5px;
@@ -881,7 +881,7 @@ h6 {
   box-shadow: 0 0 11px 0 rgba(0,0,255,.3);
 }
 
-.projects__item-inner {
+.projects__item-overlay {
   font-size: 7.5vw;
   font-weight: 700;
   display: -webkit-box;
@@ -903,7 +903,7 @@ h6 {
   align-items: center;
 }
 
-.projects__item-inner:focus {
+.projects__item-overlay:focus {
   outline: 0;
 }
 
@@ -1095,7 +1095,7 @@ h6 {
   .slick-slider .slick-dots li button {
     width: 1.30208vw;
     height: 1.30208vw;
-    padding: .39063vw;
+    padding: .39062vw;
   }
 
   .section {
@@ -1128,7 +1128,7 @@ h6 {
   }
 
   .header__wrapper {
-    padding: 1.95313vw 0;
+    padding: 1.95312vw 0;
   }
 
   .header__inner {
@@ -1138,7 +1138,7 @@ h6 {
 
   .header__logo {
     position: absolute;
-    top: -1.95313vw;
+    top: -1.95312vw;
     left: 3.90625vw;
     width: 12.36979vw;
   }
@@ -1193,7 +1193,7 @@ h6 {
   }
 
   .burger__body span {
-    height: .39063vw;
+    height: .39062vw;
   }
 
   .burger__body span:not(:last-child) {
@@ -1233,7 +1233,7 @@ h6 {
     padding: 1.30208vw;
   }
 
-  .projects__item-inner {
+  .projects__item-overlay {
     font-size: 3.90625vw;
     height: 26.04167vw;
     padding: 5.20833vw;
@@ -1543,7 +1543,7 @@ h6 {
     padding: .625rem;
   }
 
-  .projects__item-inner {
+  .projects__item-overlay {
     font-size: 2.75rem;
     height: 15.625rem;
     padding: 3.125rem;
