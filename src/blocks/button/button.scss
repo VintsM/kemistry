@@ -42,7 +42,7 @@
   }
   &.button_blot {
     color: $white;
-    background: url(../img/button/bg-red.png) transparent center no-repeat;
+    background: url(../img/button/bg-red.jpg) transparent center no-repeat;
     background-size: contain;
     line-height: svw(60);
     padding: 0;
@@ -50,16 +50,16 @@
     border: 0;
     &:hover,
     &:focus {
-      background: url(../img/button/bg-green.png) transparent center no-repeat;
+      background: url(../img/button/bg-green.jpg) transparent center no-repeat;
       background-size: contain;
       color: $white;
     }
     &.button_green {
-      background: url(../img/button/bg-green.png) transparent center no-repeat;
+      background: url(../img/button/bg-green.jpg) transparent center no-repeat;
       background-size: contain;
       &:hover,
       &:focus {
-        background: url(../img/button/bg-red.png) transparent center no-repeat;
+        background: url(../img/button/bg-red.jpg) transparent center no-repeat;
         background-size: contain;
         color: $white;
       }
