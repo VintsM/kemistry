@@ -21,7 +21,7 @@ mixin header(data)
           nav.header__nav
             each item in menu
               a(href=(data.inner ? '/' + item.link : item.link) title=item.text).header__nav-item.js-header-nav-item= item.text
-        .header__lang
+        //-.header__lang
           span.header__lang-text Рус
           =' '
           | /
