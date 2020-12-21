@@ -1,0 +1,18 @@
+extend ../layouts/master
+
+block addHeadContent
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap' rel='stylesheet')
+
+
+block content
+    .p-ny2021
+        .p-ny2021__content
+            img(src='./img/logos/kemistry_logo_white.png' alt='Kemistry logo').p-ny2021__logo
+            hr.p-ny2021__line
+            .p-ny2021__text coming soon
+
+
+block footer
+    include ../../blocks/footer/footer
+    +footer({mods: ['ny2021']})

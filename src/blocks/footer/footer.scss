@@ -14,6 +14,10 @@
     font-size: rem(16);
   }
 
+  &_ny2021 {
+    background-color: $darkBlue;
+  }
+
   &__inner {
     box-sizing: border-box;
     padding: 0 svw($small-container-padding);

@@ -1,14 +1,17 @@
-footer.footer
-  .footer__inner(itemscope itemtype='http://schema.org/Organization')
-    img(src='./img/logos/kemistry_white.svg').footer__logo
-    address.footer__address
-      span(itemprop='addressLocality') г. Москва,
-      br
-      span(itemprop='streetAddress') Столешников пер., д 9, стр 1
-    .footer__contacts
-      a(href='mailto:info@kemistry.ru' itemprop='email').footer__link info@kemistry.ru
-      br
-      a(href='tel:+74995307980' itemprop='telephone').footer__link +7 (499) 530 79 80
-    .footer__social
-      a(href='https://www.facebook.com/Kemistry-388131298028217/' target='_blank' rel='nofollow noopener').footer__social-link
-        img(src='./img/social/fb.svg').footer__social-img
+mixin footer(data)
+  - data = data || {};
+
+  footer.footer(class=makeMods(data.mods, 'footer'))
+    .footer__inner(itemscope itemtype='http://schema.org/Organization')
+      img(src='./img/logos/kemistry_white.svg').footer__logo
+      address.footer__address
+        span(itemprop='addressLocality') г. Москва,
+        br
+        span(itemprop='streetAddress') Столешников пер., д 9, стр 1
+      .footer__contacts
+        a(href='mailto:info@kemistry.ru' itemprop='email').footer__link info@kemistry.ru
+        br
+        a(href='tel:+74995307980' itemprop='telephone').footer__link +7 (499) 530 79 80
+      .footer__social
+        a(href='https://www.facebook.com/Kemistry-388131298028217/' target='_blank' rel='nofollow noopener').footer__social-link
+          img(src='./img/social/fb.svg').footer__social-img

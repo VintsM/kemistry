@@ -18,12 +18,16 @@ html(lang='ru')
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     meta(name='theme-color' content="#feabef")
 
+    block addHeadContent
+
   body
     .l-page
       .l-page__inner
         block content
 
-      include ../../blocks/footer/footer
+      block footer
+        include ../../blocks/footer/footer
+        +footer()
 
     block addContent
 
