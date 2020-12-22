@@ -1,9 +1,13 @@
 .p-ny2021 {
     height: 100%;
     background-color: $darkBlue;
-    padding: 50px 50px 115px;
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
+
+    @include breakpoint(medium) {
+        padding: 50px;
+    }
 
     &__content {
         margin: auto;
@@ -11,21 +15,10 @@
         max-width: 955px;
     }
 
-    &__logo {
-        max-width: 100%;
-    }
-
-    &__line {
-        height: 5px;
-        background-color: #ff297a;
-        margin: 4vw 0 9vw;
-        border: none;
-    }
-
-    &__text {
-        font-family: 'Montserrat', sans-serif;
-        color: $white;
-        font-size: 10vw;
-        white-space: nowrap;
+    &__video {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        outline: none;
     }
 }

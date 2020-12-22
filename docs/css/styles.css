@@ -490,7 +490,7 @@ h6 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 100%;
-  padding: 50px 50px 115px;
+  padding: 20px;
   background-color: #18286a;
 }
 
@@ -500,22 +500,11 @@ h6 {
   text-align: center;
 }
 
-.p-ny2021__logo {
-  max-width: 100%;
-}
-
-.p-ny2021__line {
-  height: 5px;
-  margin: 4vw 0 9vw;
-  border: 0;
-  background-color: #ff297a;
-}
-
-.p-ny2021__text {
-  font-family: 'Montserrat',sans-serif;
-  font-size: 10vw;
-  white-space: nowrap;
-  color: #fff;
+.p-ny2021__video {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  outline: 0;
 }
 
 .section {
@@ -1105,6 +1094,10 @@ h6 {
     width: 1.30208vw;
     height: 1.30208vw;
     padding: .39062vw;
+  }
+
+  .p-ny2021 {
+    padding: 50px;
   }
 
   .section {
